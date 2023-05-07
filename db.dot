@@ -1,3 +1,4 @@
+// Thanks to https://spin.atomicobject.com/2017/11/15/table-rel-diagrams-graphviz/
 digraph {
     graph [pad="0.5", nodesep="0.5", ranksep="2"];
     node [shape=plain]
