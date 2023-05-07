@@ -1,0 +1,35 @@
+digraph {
+    graph [pad="0.5", nodesep="0.5", ranksep="2"];
+    node [shape=plain]
+    rankdir=LR;
+
+
+Users [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>users</i></td></tr>
+  <tr><td port="id">id : uuid </td></tr>
+  <tr><td>email : varchar(255) </td></tr>
+  <tr><td>username : varchar(255) </td></tr>
+  <tr><td>password : varchar(255) </td></tr>
+</table>>];
+
+
+Comments [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>comments</i></td></tr>
+  <tr><td>content : text</td></tr>
+  <tr><td port="user_id">user_id : uuid </td></tr>
+  <tr><td port="room_id">room_id : uuid </td></tr>
+</table>>];
+
+
+Rooms [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td><i>rooms</i></td></tr>
+  <tr><td port="id">id : uuid </td></tr>
+  <tr><td>name : varchar(255) </td></tr>
+</table>>];
+
+Comments:user_id -> Users:id;
+Comments:room_id -> Rooms:id;
+}
